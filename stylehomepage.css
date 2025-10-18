@@ -107,8 +107,8 @@ body {
 }
 
 .upload-icon {
-  width: 24px;   /* size of image */
-  height: 24px;
+  width: 2px;   /* size of image */
+  height: 2px;
   object-fit: contain;
 }
 
@@ -176,4 +176,5 @@ body {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
 

@@ -17,7 +17,6 @@
       <p>+ New chat</p>
       <p>Search chats</p>
       <p>Library</p>
-      <p>Projects</p>
     </div>
     <div class="menu-bottom">
       <p>Explore</p>
@@ -38,6 +37,7 @@
     <div class="chat-section">
       <h1>What can I help with?</h1>
       <div class="input-area">
+	   <label for="fileUpload" class="upload-btn">📎</label>
         <input type="text" id="input" placeholder="Ask anything">
         <button onclick="askQuestion()">➤</button>
       </div>
@@ -51,7 +51,7 @@
       <input type="text" placeholder="Username" id="loginUser">
       <input type="password" placeholder="Password" id="loginPass">
       <div class="popup-buttons">
-        <button onclick="doLogin()">Login</button>
+        <button onclick="location.href='login.html'">Login</button>
         <button onclick="closePopup('loginPopup')">Cancel</button>
       </div>
     </div>
@@ -79,6 +79,14 @@
     function openPopup(id) {
       document.getElementById(id).style.display = "flex";
     }
+
+	function handleFileUpload(event) {
+  const file = event.target.files[0];
+  if (file) {
+    alert(`File "${file.name}" selected successfully!`);
+    // You can later send it to your backend or display the file name in chat
+  }
+}
 
     function closePopup(id) {
       document.getElementById(id).style.display = "none";

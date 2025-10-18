@@ -38,6 +38,7 @@
       <h1>What can I help with?</h1>
       <div class="input-area">
 	   <label for="fileUpload" class="upload-btn">📎</label>
+		   <input type="file" id="fileUpload" style="display:none;" onchange="handleFileUpload(event)">
         <input type="text" id="input" placeholder="Ask anything">
         <button onclick="askQuestion()">➤</button>
       </div>
@@ -126,3 +127,4 @@
   </script>
 </body>
 </html>
+

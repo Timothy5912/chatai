@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YourChatAI</title>
+  <link rel="stylesheet" href="stylehomepage.css">
+</head>
+<body>
+ 
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Your Chat AI</h2>
+    </div>
+    <div class="menu">
+      <p>+ New chat</p>
+      <p>Search chats</p>
+      <p>Library</p>
+      <p>Projects</p>
+    </div>
+    <div class="menu-bottom">
+      <p>Explore</p>
+      <p>Contact</p>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main">
+    <div class="top-bar" id="top-bar">
+      <div class="auth-area">
+        <button class="auth-btn" onclick="openPopup('loginPopup')">Login</button>
+        <button class="auth-btn" onclick="openPopup('signupPopup')">Sign Up</button>
+      </div>
+      <a href="#" class="download-link">⬇ Download</a>
+    </div>
+
+    <div class="chat-section">
+      <h1>What can I help with?</h1>
+      <div class="input-area">
+        <input type="text" id="input" placeholder="Ask anything">
+        <button onclick="askQuestion()">➤</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Login Popup -->
+  <div class="popup" id="loginPopup">
+    <div class="popup-box">
+      <h3>Login</h3>
+      <input type="text" placeholder="Username" id="loginUser">
+      <input type="password" placeholder="Password" id="loginPass">
+      <div class="popup-buttons">
+        <button onclick="doLogin()">Login</button>
+        <button onclick="closePopup('loginPopup')">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Popup -->
+  <div class="popup" id="signupPopup">
+    <div class="popup-box">
+      <h3>Sign Up</h3>
+      <input type="text" placeholder="Username" id="signupUser">
+      <input type="email" placeholder="Email" id="signupEmail">
+      <input type="password" placeholder="Password" id="signupPass">
+      <div class="popup-buttons">
+        <button onclick="doSignup()">Sign Up</button>
+        <button onclick="closePopup('signupPopup')">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    let loggedIn = false;
+    let questionCount = 0;
+
+    function openPopup(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closePopup(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Fake login/signup actions
+    function doLogin() {
+      loggedIn = true;
+      alert("You are now logged in!");
+      closePopup('loginPopup');
+      document.getElementById('top-bar').style.display = "none";
+    }
+
+    function doSignup() {
+      loggedIn = true;
+      alert("Sign-up successful!");
+      closePopup('signupPopup');
+      document.getElementById('top-bar').style.display = "none";
+    }
+
+    function askQuestion() {
+      if (!loggedIn) {
+        questionCount++;
+        if (questionCount >= 10) {
+          alert("You’ve reached your 10-question limit. Please log in or sign up.");
+        }
+      }
+    }
+
+    // Close popup when clicking outside box
+    window.onclick = function(event) {
+      const popups = document.querySelectorAll(".popup");
+      popups.forEach(p => {
+        if (event.target === p) p.style.display = "none";
+      });
+    }
+  </script>
+</body>
+</html>

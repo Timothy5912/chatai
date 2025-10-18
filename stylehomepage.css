@@ -4,6 +4,7 @@ body {
   display: flex;
   height: 100vh;
   background-color: #f5f5f5;
+  flex-direction: row;
 }
 
 /* Sidebar */
@@ -37,6 +38,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .top-bar {
@@ -74,28 +76,29 @@ body {
   font-size: 14px;
 }
 
+/* Chat section */
 .chat-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh; /* pushes content to center vertically */
+  min-height: 80vh;
   text-align: center;
 }
 
 .chat-section h1 {
-  font-size: 36px; /* increase size */
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
+/* Input area */
 .input-area {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-/* Chat input */
 .input-area input {
   padding: 10px;
   width: 500px;
@@ -121,9 +124,8 @@ body {
   background-color: #e0e0e0;
 }
 
-/* Upload image */
 .upload-icon {
-  width: 24px;   /* Small size */
+  width: 24px;
   height: 24px;
   object-fit: contain;
 }
@@ -192,3 +194,95 @@ body {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* ------------------------------ */
+/* RESPONSIVE DESIGN */
+/* ------------------------------ */
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .chat-section h1 {
+    font-size: 28px;
+  }
+
+  .input-area input {
+    width: 350px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  .menu, .menu-bottom {
+    padding: 10px;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .chat-section {
+    min-height: 60vh;
+  }
+
+  .chat-section h1 {
+    font-size: 24px;
+  }
+
+  .input-area {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input-area input {
+    width: 90%;
+    border-radius: 5px;
+  }
+
+  .input-area button {
+    width: 90%;
+    border-radius: 5px;
+  }
+
+  .upload-btn {
+    padding: 10px;
+  }
+
+  .top-bar {
+    position: static;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+}
+
+/* Very small phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .chat-section h1 {
+    font-size: 20px;
+  }
+
+  .input-area input {
+    width: 95%;
+  }
+
+  .auth-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}

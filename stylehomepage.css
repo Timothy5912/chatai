@@ -93,18 +93,23 @@ body {
   border-radius: 5px 0 0 5px;
   outline: none;
   
-  .upload-btn {
-  font-size: 20px;
+ .upload-btn {
   cursor: pointer;
-  padding: 8px;
-  border-radius: 8px;
   background-color: #f2f2f2;
+  padding: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   transition: background 0.2s;
 }
 
 .upload-btn:hover {
   background-color: #e0e0e0;
+}
+
+.upload-icon {
+  width: 24px;   /* size of image */
+  height: 24px;
+  object-fit: contain;
 }
 
 }
@@ -171,3 +176,4 @@ body {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+

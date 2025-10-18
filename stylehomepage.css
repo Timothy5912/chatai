@@ -4,7 +4,6 @@ body {
   display: flex;
   height: 100vh;
   background-color: #f5f5f5;
-  flex-direction: row;
 }
 
 /* Sidebar */
@@ -195,94 +194,69 @@ body {
 }
 
 /* ------------------------------ */
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN (Same layout, just scaled) */
 /* ------------------------------ */
 
-/* Tablets (max-width: 992px) */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+  .chat-section h1 {
+    font-size: 30px;
+  }
+
+  .input-area input {
+    width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
   .sidebar {
     width: 180px;
   }
 
   .chat-section h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .input-area input {
     width: 350px;
   }
+
+  .upload-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
-/* Mobile (max-width: 768px) */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   body {
-    flex-direction: column;
+    flex-direction: row; /* keep same layout */
   }
 
   .sidebar {
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px 0;
-  }
-
-  .menu, .menu-bottom {
-    padding: 10px;
-  }
-
-  .main {
-    padding: 20px;
-  }
-
-  .chat-section {
-    min-height: 60vh;
+    width: 150px;
+    min-width: 140px;
   }
 
   .chat-section h1 {
-    font-size: 24px;
-  }
-
-  .input-area {
-    flex-direction: column;
-    width: 100%;
+    font-size: 22px;
   }
 
   .input-area input {
-    width: 90%;
-    border-radius: 5px;
-  }
-
-  .input-area button {
-    width: 90%;
-    border-radius: 5px;
-  }
-
-  .upload-btn {
-    padding: 10px;
-  }
-
-  .top-bar {
-    position: static;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-}
-
-/* Very small phones (max-width: 480px) */
-@media (max-width: 480px) {
-  .chat-section h1 {
-    font-size: 20px;
-  }
-
-  .input-area input {
-    width: 95%;
+    width: 240px;
+    padding: 8px;
   }
 
   .auth-btn {
     padding: 6px 10px;
     font-size: 13px;
+  }
+
+  .upload-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .input-area button {
+    padding: 8px 10px;
+    font-size: 14px;
   }
 }

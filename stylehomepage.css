@@ -44,7 +44,7 @@ body {
   top: 15px;
   right: 20px;
   display: flex;
-  flex-direction: column; /* stack buttons above the download link */
+  flex-direction: column;
   align-items: flex-end;
 }
 
@@ -59,7 +59,6 @@ body {
   border: none;
   padding: 8px 15px;
   border-radius: 5px;
-  margin: 0;
   cursor: pointer;
 }
 
@@ -70,11 +69,10 @@ body {
 .download-link {
   color: #007bff;
   text-decoration: none;
-  margin-top: 20px; /* now works, adds space below buttons */
+  margin-top: 20px;
   font-weight: 500;
   font-size: 14px;
 }
-
 
 .chat-section h1 {
   font-size: 25px;
@@ -84,36 +82,43 @@ body {
 .input-area {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
+/* Chat input */
 .input-area input {
   padding: 10px;
   width: 500px;
   border: 2px solid #ccc;
   border-radius: 5px 0 0 5px;
   outline: none;
-  
- .upload-btn {
+}
+
+/* Upload button */
+.upload-btn {
   cursor: pointer;
   background-color: #f2f2f2;
   padding: 6px;
   border-radius: 8px;
   border: 1px solid #ccc;
   transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .upload-btn:hover {
   background-color: #e0e0e0;
 }
 
+/* Upload image */
 .upload-icon {
-  width: 2px;   /* size of image */
-  height: 2px;
-
+  width: 24px;   /* Small size */
+  height: 24px;
+  object-fit: contain;
 }
 
-}
-
+/* Send button */
 .input-area button {
   padding: 10px 15px;
   border: none;
@@ -176,6 +181,3 @@ body {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
-
-
-
